@@ -3,23 +3,22 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "./api/auth/[...nextauth]";
 import { signOut } from "next-auth/react";
 import useCurrentuser from "@/hooks/useCurrentuser";
+import Navbar from "@/components/Navbar";
+import BillBoard from "@/components/Billboard";
+import MovieList from "@/components/MovieList";
+import useMovieList from "@/hooks/useMovieList";
 
 export default function Home() {
   const { data: user } = useCurrentuser();
+  const { data: movies = [] } = useMovieList();
 
   return (
     <>
-      <h1 className="text-white text-4xl">
-        Login Successful! Welcome to Netflix {user?.name}
-      </h1>
-      <button
-        className="bg-red-500 text-white px-4 py-2 rounded-md"
-        onClick={() => {
-          signOut();
-        }}
-      >
-        Logout
-      </button>
+      <Navbar />
+      <BillBoard />
+      <div className="pb-10">
+        <MovieList title="Trending Now" data={movies} />
+      </div>
     </>
   );
 }
