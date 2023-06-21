@@ -1,12 +1,13 @@
 This is a Sample Fullstack Netflix Clone web application created using Next.js(Typescript).
-Try this out at: https://my-netflix-clone-red.vercel.app/
+Try this out at: https://my-netflix-clone-red.vercel.app/ (enabled on demand)
 
 ## Technologies Used
 
 1. Next.js (for client and server side)
-2. Prisma (Database ORM)
-3. MongoDB Atlas (Database)
-4. Tailwind CSS (styling)
+2. Next-auth (for authentication and authorization)
+3. Prisma (Database ORM)
+4. MongoDB Atlas (Database)
+5. Tailwind CSS (styling)
 
 Credits to [Antonio](https://www.youtube.com/@codewithantonio) for the youtube tutorial.
 
