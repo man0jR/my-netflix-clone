@@ -23,3 +23,21 @@ yarn dev
 # or
 pnpm dev
 ```
+
+## Sample Screenshots
+
+### Dashboard page
+
+![Alt text](image.png)
+
+### Auth page
+
+![Alt text](image-1.png)
+
+### Profile Selection page
+
+![Alt text](image-2.png)
+
+### Movie Player page
+
+![Alt text](image-3.png)
