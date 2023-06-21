@@ -3,6 +3,7 @@ import Navbaritem from "./NavbarItem";
 import { BsChevronDown, BsSearch, BsBell } from "react-icons/bs";
 import { useState, useCallback, useEffect } from "react";
 import AccountMenu from "./AccountMenu";
+import Image from "next/image";
 
 const TOP_OFFSET = 66;
 

@@ -1,6 +1,7 @@
 import useCurrentuser from "@/hooks/useCurrentuser";
 import { GetServerSideProps, NextPageContext } from "next";
 import { getSession } from "next-auth/react";
+import Image from "next/image";
 import { useRouter } from "next/router";
 
 const Profiles = () => {

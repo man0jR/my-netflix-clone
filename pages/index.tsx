@@ -7,10 +7,12 @@ import Navbar from "@/components/Navbar";
 import BillBoard from "@/components/Billboard";
 import MovieList from "@/components/MovieList";
 import useMovieList from "@/hooks/useMovieList";
+import useFavoriteMovies from "@/hooks/useFavoriteMovies";
 
 export default function Home() {
   const { data: user } = useCurrentuser();
   const { data: movies = [] } = useMovieList();
+  const { data: favoriteMovies = [] } = useFavoriteMovies();
 
   return (
     <>
@@ -18,6 +20,7 @@ export default function Home() {
       <BillBoard />
       <div className="pb-10">
         <MovieList title="Trending Now" data={movies} />
+        <MovieList title="My Favorites" data={favoriteMovies} />
       </div>
     </>
   );

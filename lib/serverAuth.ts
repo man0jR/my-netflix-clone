@@ -1,9 +1,11 @@
-import { NextApiRequest } from "next";
+import { NextApiRequest, NextApiResponse } from "next";
 import { getSession } from "next-auth/react";
 import { prisma } from "./prismadb";
+import { getServerSession } from "next-auth";
+import { authOptions } from "@/pages/api/auth/[...nextauth]";
 
-const serverAuth = async (req: NextApiRequest) => {
-  const session = await getSession({ req });
+const serverAuth = async (req: NextApiRequest, res: NextApiResponse) => {
+  const session = await getServerSession(req, res, authOptions);
 
   if (!session?.user?.email) {
     throw new Error("Unauthorized");
@@ -16,11 +18,11 @@ const serverAuth = async (req: NextApiRequest) => {
       id: true,
       image: true,
       name: true,
+      favoriteIds: true,
       account: true,
       sessions: true,
     },
   });
-
   if (!loggedInuser) {
     throw new Error("Unauthorized");
   }
